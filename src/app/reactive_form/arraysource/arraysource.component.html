@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+  <input type="text" name="classname" id="classname" formControlName="Class"><br />
+  <input type="text" name="teacher" id="teacher" formControlName="TeacherName"><br />
+  <table formArrayName="Students">
+    <thead>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Weight</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of this.form.value.Students; let i = index;" [formGroupName]="i">
+        <td><input type="text" formControlName="Name"></td>
+        <td><input type="text" formControlName="Age"></td>
+        <td><input type="text" formControlName="Height"></td>
+        <td><input type="text" formControlName="Weight"></td>
+        <td><select formControlName="Sex">
+            <option value="男">男</option>
+            <option value="女">女</option>
+          </select></td>
+      </tr>
+    </tbody>
+  </table>
+  <pre>{{this.form.value|json}}</pre>
+</form>
