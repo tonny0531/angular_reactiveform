@@ -1,0 +1,7 @@
+<mat-selection-list #list>
+  <mat-list-option *ngFor="let tta of taskTypeAreas" [selected]="tta.checked" (click)="onAreaListControlChanged(list)" [value]="tta.name">
+          {{tta.name}}
+  </mat-list-option>
+</mat-selection-list>
+
+{{this.selectedOptions|json}}

@@ -22,20 +22,23 @@ export class ArraysourceComponent implements OnInit {
       Students: new FormArray([
         new FormGroup({
           Name: new FormControl('Jeff'),
-          Age : new FormControl(24),
+          Age: new FormControl(24),
           Height: new FormControl(173),
           Weight: new FormControl(80),
           Sex: new FormControl('男'),
         }),
         new FormGroup({
           Name: new FormControl('Abel'),
-          Age : new FormControl(26),
+          Age: new FormControl(26),
           Height: new FormControl(170),
           Weight: new FormControl(60),
           Sex: new FormControl('男'),
         }),
       ]),
     });
+  }
+  changeStatus($event: any) {
+
   }
 
 }
